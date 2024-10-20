@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite reciepe</title>
+    <!-- Icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favourite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Updated Favourite Recipes Container -->
+    <section class="favorite-recipe-container" id="favoriteRecipesContainer">
+        <!-- Favorite recipes will be dynamically inserted here -->
+    </section>
+
+    <!-- Updated Message for No Favorites -->
+    <div id="noFavoritesMessage" style="display: none;">
+        <h3>You haven't added any favourite recipes yet!</h3>
+    </div>
+
+    <!-- Feather Icons Init -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+<script src="js/favorite.js"></script>
+</html>

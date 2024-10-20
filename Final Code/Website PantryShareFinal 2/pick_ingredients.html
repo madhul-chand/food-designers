@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Pick Ingredients</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Available Ingredient Table -->
+    <main>
+        <section class="ingredient-list">
+            <h1>Available ingredient</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredient Name</th>
+                        <th>Qty.</th>
+                        <th>Stored In</th>
+                        <th>Consume By</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ingredient="Onion">
+                        <td>Onion</td>
+                        <td class="ingredient-qty">5 pcs</td>
+                        <td>01/10/24</td>
+                        <td>31/10/24</td>
+                        <td><button class="pick-button" onclick="openDialog('Onion', '5 pcs', '31/10/24')">Pick</button></td>
+                    </tr>
+                    <tr data-ingredient="Cream">
+                        <td>Cream</td>
+                        <td class="ingredient-qty">500 g</td>
+                        <td>10/10/24</td>
+                        <td>31/11/24</td>
+                        <td><button class="pick-button" onclick="openDialog('Cream', '500 g', '31/11/24')">Pick</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Cart and Done Buttons -->
+        <div class="cart-buttons">
+            <button class="cart-button" onclick="redirectToCart()">Check Your Cart</button>
+            <a href="pantry.html" class="cart-button">Done</a>
+        </div>
+
+        <!-- Dialog Overlay -->
+        <div id="dialog-overlay" class="overlay">
+            <div class="dialog-box">
+                <h2>Pick Ingredient</h2>
+                <p>How many <span id="ingredient-name">Onion</span> do you want to take?</p>
+                <p>Consume by <span id="consume-date">31/10/24</span></p>
+                <p>Maximum qty. <span id="max-qty">5 pcs</span></p>
+                <select id="quantity-select">
+                    <!-- Options will be dynamically populated based on available quantity -->
+                </select>
+                <button class="dialog-button" onclick="closeDialog()">Done</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

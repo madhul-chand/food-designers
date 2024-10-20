@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Butter Chicken</title>
+    <link rel="stylesheet" href="css/style_butter_chicken.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="ingredient.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favourite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Ingredient Selection Section -->
+    <div class="container">
+        <h2>Fried Rice</h2>
+        <p>Please select the ingredients you have with you</p>
+        <form id="ingredientForm" data-recipe="fried_rice">
+            <label>
+                <input type="checkbox" name="ingredient" value="500 g of white rice" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 500 g of white rice
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 tbsp oil" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2 tbsp oil
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 eggs" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2 eggs
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="150g chicken breast " onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 150g chicken breast 
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 minced garlic cloves" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>  2 minced garlic cloves
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 onion" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1/2 onion 
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="120g bacon" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 120g bacon
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 small carrot*" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 small carrot*
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 cup frozen corn" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1/2 cup frozen corn
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 cup frozen peas" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1/2 cup frozen peas
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="3/4 cup green onions" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 3/4 cup green onions
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2.5 tbsp Chinese cooking wine or Mirin " onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2.5 tbsp Chinese cooking wine or Mirin 
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tbsp oyster sauce " onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 tbsp oyster sauce 
+            </label>
+
+            <label>
+                <input type="checkbox" name="ingredient" value="3 tbsp light soy sauce" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 3 tbsp light soy sauce
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 tsp sesame oil " onchange="updateButtons()">
+                <span class="custom-checkbox"></span>1/2 tsp sesame oil 
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/4 tsp white pepper" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>1/4 tsp white pepper
+            </label>
+
+            <div class="button-container">
+                <button type="button" id="checkButton" onclick="checkIngredients()">Check Ingredients</button>
+                <button type="submit" id="doneButton">Done</button>
+            </div>
+        </form>
+    </div>
+
+    <!--The pop up overlay-->
+    <div id="popupOverlay">
+        <div id="popup">
+            <p id="popupMessage"></p>
+            <div id="missingIngredientsList"></div>
+            <div class="popup-button-container">
+                <button id="pantryButton" onclick="goToPantry()">Go to Pantry</button>
+                <button id="recipeButton" onclick="goToRecipe()">Go to Recipe</button>
+                <span id="closePopup" onclick="closePopup()">Close</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    feather.replace();
+  </script>
+  <!--Js function-->
+  <script src="js/script.js"></script>
+  
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Recipe Recommendations</title>
+    <!--Icon-->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+        <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Section -->
+    <section class="recipe-container">
+        <div class="recipe-details">
+            <h1>Japanese Curry</h1>
+            <span class="dish-type">Japanese dish</span>
+            <ul class="recipe-info">
+                <li>Consume within: 5 days</li>
+                <li>Prep time: 15 mins</li>
+                <li>Cook time: 30 mins</li>
+            </ul>
+        </div>
+
+        <div class="recipe-instructions">
+            <h2>Recipe</h2>
+            <h3>Curry</h3>
+            <ol>
+                <li>Add oil to a pot and heat over medium high heat.</li>
+                <li>Add onion and sauté for a few minutes or until the onion becomes translucent and edges start getting slightly burnt.</li>
+                <li>Add potatoes and carrots into the pot and stir for a couple of minutes or until the surface of the vegetables starts getting cooked.</li>
+                <li>Add water and turn the heat up to bring it to a boil. Then reduce the heat to medium low and simmer for about 7 minutes or until the vegetables are nearly cooked through </li>
+                <li>Break the curry roux cake into small blocks along the lines and add them into the pot. Stir gently to blend the curry roux.</li>
+                <li>Reduce the heat to low, place a lid on and cook for about 10 minutes or until the curry roux is completely dissolved. Stir occasionally as the curry tends to stick to the bottom of the pot.</li>
+                <li>Check the consistency of the sauce. It should be like béchamel sauce. If it's too thick, adjust with some water. If too thin, cook further without the lid. It will thicken when cooled down as well.</li>
+                <li>Turn the heat off.</li>
+            </ol>
+
+            <h3>Serving</h3>
+            <ol>
+                <li>Place a cup of hot cooked rice onto one side of a plate. Place the chicken cutlet pieces next to the rice, leaning them on the rice so that there will be a space to pour the curry.</li>
+                <li>Pour curry next to the chicken cutlet, put fukujinzuke on the side and serve immediately.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Buttons -->
+    <div class="button-container-receipe">
+        <button id="favoriteButton" style="display: none;" onclick="goToFavorite()">Go to Favourite</button>
+        <button id="doneButton" style="display: none;" onclick="goToReciepeHome()">Go to Recipe</button>
+    </div>
+
+    <script>
+        feather.replace();
+      </script>
+      <!--Js function-->
+      <script src="js/script.js"></script>
+      
+    
+</body>
+</html>

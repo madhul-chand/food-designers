@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Your Cart</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <main>
+        <h2 class="ingredient-heading">Your Ingredient Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredient Name</th>
+                    <th>Qty.</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="cart-buttons">
+            <button class="cart-button" onclick="goBack()">Continue Shopping</button>
+            <button class="cart-button" onclick="clearCart()">Clear Cart</button>
+            <a href="pantry.html" class="cart-button">Done</a>
+        </div>
+    </main>
+
+    <script>
+        // Load cart data from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to populate the cart table with items
+        function populateCart() {
+            const cartTableBody = document.getElementById('cart-table-body');
+            cartTableBody.innerHTML = ''; // Clear previous cart items
+
+            // Check if cart is empty and display appropriate message
+            if (cart.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td colspan="2" style="text-align:center;">Your cart is empty.</td>
+                `;
+                cartTableBody.appendChild(row);
+            } else {
+                // If the cart is not empty, display the cart items
+                cart.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${item.qty} ${item.unit}</td>
+                    `;
+                    cartTableBody.appendChild(row);
+                });
+            }
+        }
+
+        // Call populateCart to display the cart items on page load
+        populateCart();
+
+        // Function to go back to the previous page
+        function goBack() {
+            // Navigate back to the previous page or a specific shopping page
+            window.location.href = 'pick_ingredients.html'; // Change this to the desired shopping page URL
+        }
+
+        // Function to clear the cart and reset all ingredient quantities
+        function clearCart() {
+            // Clear the cart array in memory
+            cart = [];
+
+            // Also update localStorage to reflect an empty cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Reset ingredient quantities to their initial state
+            resetIngredients();
+
+            // Update the displayed cart to reflect the empty state
+            populateCart();
+        }
+
+        // Function to reset all ingredient quantities in the global ingredients object
+        function resetIngredients() {
+            // Ensure the global 'ingredients' object exists and reset quantities
+            if (typeof ingredients !== 'undefined') {
+                ingredients['Onion'].qty = 5;  // Reset Onion to initial quantity
+                ingredients['Cream'].qty = 500;  // Reset Cream to initial quantity
+            }
+        }
+
+        // Function to add an item to the cart
+        function addToCart(itemName, qty, unit) {
+            // Reload the cart from localStorage in case it's cleared or updated elsewhere
+            cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const existingItemIndex = cart.findIndex(item => item.name === itemName);
+            if (existingItemIndex > -1) {
+                // If item already exists, update the quantity
+                cart[existingItemIndex].qty += qty;
+            } else {
+                // If item doesn't exist, add it to the cart
+                cart.push({ name: itemName, qty: qty, unit: unit });
+            }
+
+            // Update localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Re-populate the cart to show the new items
+            populateCart();
+        }
+
+        // Example: add items to the cart for testing (you can remove this in production)
+        // Uncomment the line below to simulate adding an item on page load
+        // addToCart('Tomatoes', 2, 'kg');
+    </script>
+</body>
+</html>

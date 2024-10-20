@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Recipe Recommendations</title>
+    <!--Icon-->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Section -->
+    <section class="recipe-container">
+        <div class="recipe-details">
+            <h1>Fried Rice</h1>
+            <span class="dish-type">Indonesian dish</span>
+            <ul class="recipe-info">
+                <li>Consume within: 5 days</li>
+                <li>Prep time: 10 mins</li>
+                <li>Cook time: 10 mins</li>
+            </ul>
+        </div>
+
+        <div class="recipe-instructions">
+            <h2>Recipe</h2>
+            <h3>Sauce & Chicken</h3>
+            <ol>
+                <li>Mix Sauce in a bowl and Pour 2 tsp over chicken</li>
+                <li>Toss the chicken to coat and set aside for 10 minutes.</li>
+            </ol>
+
+            <h3>Egg</h3>
+            <ol>
+                <li>Heat 1 tbsp oil in a wok or skillet over medium heat.</li>
+                <li>Add egg and scramble until just cooked (still a touch wet) then remove.</li>
+            </ol>
+
+            <h3>Fried Rice</h3>
+            <ol>
+                <li>Turn heat up to high, add remaining 1/2 tbsp oil and bacon into the same skillet.</li>
+                <li>Cook for 1 minute or so until fat starts to melt, then add onion and garlic.</li>
+                <li>Cook until bacon is light golden, about 1 - 2 minutes.</li>
+                <li>Add vegetables (still frozen is fine). Cook for 1 minute.</li>
+                <li>Add chicken and cook until it changes from pink to white - about 1 - 2 minutes.</li>
+                <li>Add rice and Sauce ingredients. Cook for 1 1/2 minutes, stirring constantly.</li>
+                <li>Add egg and green onion, toss through to disperse, then remove from heat.</li>
+                <li>Serve immediately!</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Buttons -->
+    <div class="button-container-receipe">
+        <button id="favoriteButton" onclick="goToFavorite()">Favorite</button>
+        <button id="doneButton" onclick="goToReciepeHome()">Done</button>
+    </div>    
+
+    <script>
+        feather.replace();
+    </script>
+    <!-- Js function -->
+    <script src="js/script.js"></script>
+</body>
+</html>
