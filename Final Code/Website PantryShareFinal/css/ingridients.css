@@ -1,0 +1,174 @@
+ /* General Styles */
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f0e6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f58100;
+    color: white;
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Centering the content */
+    padding: 20px;
+    max-width: 600px; /* Setting a max-width for better layout */
+    margin: auto; /* Centering container on the page */
+}
+
+h2 {
+    color: #000;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align:left; /* Centering the header */
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    text-align: left; /* Centering the paragraph */
+}
+
+form {
+    margin-top: 20px;
+    width: 100%; /* Allowing form to take full width */
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin: 10px 0;
+    text-align: left; /* Keeping labels aligned to the left */
+    position: relative; /* Required for the custom checkbox */
+    padding-left: 30px; /* Space for custom checkbox */
+}
+
+/* Custom Checkbox Styles */
+input[type="checkbox"] {
+    display: none; /* Hide default checkbox */
+}
+
+input[type="checkbox"] + .custom-checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f58100; /* Border color */
+    border-radius: 3px; /* Rounded corners */
+    background-color: white; /* Background color */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Change border when checked */
+input[type="checkbox"]:checked + .custom-checkbox {
+    border-color: #f58100; /* Border color when checked */
+}
+
+/* Checkmark when checked */
+input[type="checkbox"]:checked + .custom-checkbox:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid #f58100; /* Checkmark color */
+    border-width: 0 2px 2px 0; /* Checkmark width */
+    transform: rotate(45deg);
+}
+
+/* Button Styles */
+button {
+    background-color: #f58100;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer; /* Always show pointer */
+    width: 100%; /* Making buttons full width */
+    max-width: 300px; /* Setting a max-width for buttons */
+    opacity: 1; /* Make the button visible */
+}
+
+.button-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+}
+
+.button-container button {
+    flex: 1; /* Allowing buttons to share space equally */
+    margin: 0 5px; /* Margin on the sides */
+}
+
+/* Popup Styles */
+#popupOverlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#closePopup {
+    cursor: pointer;
+    float: right;
+    color: #f58100;
+    font-size: 20px;
+}
+
+.missing-list {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Popup Button Container */
+.popup-button-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: space-between; /* Space buttons evenly */
+    margin-top: 15px; /* Space above buttons */
+}
+
+/* Style for individual popup buttons */
+.popup-button-container button {
+    flex: 1; /* Allow buttons to share space equally */
+    padding: 10px; /* Padding for button size */
+    margin: 0 5px; /* Margin on the sides for spacing */
+}
+    

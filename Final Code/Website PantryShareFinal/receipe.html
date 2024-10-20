@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Recipe Recommendations</title>
+    <!-- Icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favourite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Search Bar and Filter Icon -->
+    <div class="search-filter">
+        <input type="text" placeholder="Search recipes" id="searchBar">
+        <i data-feather="search" class="search-icon"></i>
+        <i data-feather="filter" class="filter-icon" id="open-filter"></i>
+    </div>
+
+    <!-- Recommended Recipes -->
+    <section class="recommended">
+        <h2>Recommended for you</h2>
+        <div class="recipe">
+            <!-- Card 1: Butter Chicken -->
+            <div class="recipe-card" data-recipe-name="butter chicken" data-recipe-id="1">
+                <div class="icon-container favorite-container" onclick="toggleFavorite('Butter Chicken', '1')">
+                    <i data-feather="heart" class="favorite-icon"></i>
+                </div>
+                <img src="Images/Butter Chicken.jpeg" alt="Butter Chicken">
+                <div class="description">
+                    <h3><a href="butter_chiken_ingridients.html">Butter Chicken</a></h3>
+                    <span class="dish-type">Indian dish</span>
+                    <ul>
+                        <li>Consume within: 5 days</li>
+                        <li>Prep time: 45 mins</li>
+                        <li>Cook time: 20 mins</li>
+                    </ul>
+                </div>
+                <!-- Info icon moved to the right -->
+                <div class="icon-container info-container" onclick="openPopup('Butter Chicken')">
+                    <i data-feather="info"></i>
+                </div>
+            </div>
+
+            <!-- Recipe Card: Fried Rice -->
+            <div class="recipe-card" data-recipe-name="fried rice" data-recipe-id="2">
+                <div class="icon-container favorite-container" onclick="toggleFavorite('Fried Rice', '2')">
+                    <i data-feather="heart" class="favorite-icon"></i>
+                </div>
+                <img src="Images/Friedrice.jpeg" alt="Fried rice">
+                <div class="description">
+                    <h3><a href="fried_rice_ingridients.html">Fried Rice</a></h3>
+                    <span class="dish-type">Indonesian dish</span>
+                    <ul>
+                        <li>Consume within: 5 days</li>
+                        <li>Prep time: 10 mins</li>
+                        <li>Cook time: 10 mins</li>
+                    </ul>
+                </div>
+                <div class="icon-container info-container" onclick="openPopup('Fried Rice')">
+                    <i data-feather="info"></i>
+                </div>
+            </div>
+
+            <!-- Recipe Card: Wonton -->
+            <div class="recipe-card" data-recipe-name="wonton" data-recipe-id="3">
+                <div class="icon-container favorite-container" onclick="toggleFavorite('Wonton', '3')">
+                    <i data-feather="heart" class="favorite-icon"></i>
+                </div>
+                <img src="Images/Wonton.jpeg" alt="Wonton">
+                <div class="description">
+                    <h3><a href="wonton_ingridients.html">Wonton</a></h3>
+                    <span class="dish-type">Chinese dish</span>
+                    <ul>
+                        <li>Consume within: 3 days</li>
+                        <li>Prep time: 20 mins</li>
+                        <li>Cook time: 15 mins</li>
+                    </ul>
+                </div>
+                <div class="icon-container info-container" onclick="openPopup('Wonton')">
+                    <i data-feather="info"></i>
+                </div>
+            </div>
+
+            <!-- Recipe Card: Japanese Curry -->
+            <div class="recipe-card" data-recipe-name="japanese curry" data-recipe-id="4">
+                <div class="icon-container favorite-container" onclick="toggleFavorite('Japanese Curry', '4')">
+                    <i data-feather="heart" class="favorite-icon"></i>
+                </div>
+                <img src="Images/Japenese Curry.jpeg" alt="Japanese Curry">
+                <div class="description">
+                    <h3><a href="japanese_curry_ingridients.html">Japanese Curry</a></h3>
+                    <span class="dish-type">Japanese dish</span>
+                    <ul>
+                        <li>Consume within: 5 days</li>
+                        <li>Prep time: 15 mins</li>
+                        <li>Cook time: 30 mins</li>
+                    </ul>
+                </div>
+                <div class="icon-container info-container" onclick="openPopup('Japanese Curry')">
+                    <i data-feather="info"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add More Recipe Button -->
+    <section class="add-recipe">
+        <a href="add_reciepe.html">
+            <button id="addRecipeBtn">+</button>
+        </a>
+    </section>
+
+    <!-- Filter Popup -->
+    <div class="filter-popup" id="filter-popup">
+        <div class="filter-container">
+            <div class="header-filter">
+                <button class="back-button" id="close-filter">←</button>
+                <h1>Filter</h1>
+            </div>
+            <form id="filter-form">
+                <!-- Dietary Requirements -->
+                <div class="filter-section">
+                    <h2>Dietary requirements</h2>
+                    <label><input type="checkbox" name="diet" value="halal"> Halal</label>
+                    <label><input type="checkbox" name="diet" value="vegetarian"> Vegetarian</label>
+                    <label><input type="checkbox" name="diet" value="vegan"> Vegan</label>
+                </div>
+                <!-- Allergies -->
+                <div class="filter-section">
+                    <h2>Allergies</h2>
+                    <label><input type="checkbox" name="allergy" value="meat"> Meat</label>
+                    <label><input type="checkbox" name="allergy" value="chicken"> Chicken</label>
+                    <label><input type="checkbox" name="allergy" value="seafood"> Seafood</label>
+                </div>
+                <!-- Cuisine -->
+                <div class="filter-section">
+                    <h2>Cuisine</h2>
+                    <label><input type="checkbox" name="cuisine" value="chinese"> Chinese</label>
+                    <label><input type="checkbox" name="cuisine" value="japanese"> Japanese</label>
+                    <label><input type="checkbox" name="cuisine" value="indian"> Indian</label>
+                    <label><input type="checkbox" name="cuisine" value="indonesian"> Indonesian</label>
+                </div>
+                <!-- Cook Time -->
+                <div class="filter-section">
+                    <h2>Cook Time</h2>
+                    <label><input type="checkbox" name="cook-time" value="under-30"> Under 30 mins</label>
+                    <label><input type="checkbox" name="cook-time" value="30-45"> 30 - 45 mins</label>
+                    <label><input type="checkbox" name="cook-time" value="45-60"> 45 - 60 mins</label>
+                    <label><input type="checkbox" name="cook-time" value="above-1-hour"> Above 1 hour</label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup Overlay -->
+    <div id="popupOverlay" class="overlay">
+        <div class="dialog-box">
+            <button class="close-button" onclick="closePopup()">✖</button>
+            <h3>Dietary Requirements:</h3>
+            <div id="diaryContent"></div>
+        </div>
+    </div>
+
+    <!-- Feather Icons Init --> 
+    <script>
+        feather.replace();
+    </script>
+
+    <script>
+        // Show the filter popup
+ document.getElementById('open-filter').addEventListener('click', function() {
+    document.getElementById('filter-popup').style.display = 'flex';
+});
+
+// Hide the filter popup
+document.getElementById('close-filter').addEventListener('click', function() {
+    document.getElementById('filter-popup').style.display = 'none';
+});
+
+// Optional: Process the form data
+document.getElementById('filter-form').addEventListener('change', function(event) {
+    const formData = new FormData(event.target.form);
+    const selectedFilters = {};
+    formData.forEach((value, key) => {
+        if (!selectedFilters[key]) {
+            selectedFilters[key] = [];
+        }
+        selectedFilters[key].push(value);
+    });
+    console.log(selectedFilters);
+});
+
+// Search functionality
+document.getElementById('searchBar').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase(); // Get the search term
+    const recipes = document.querySelectorAll('.recipe-card'); // Select all recipe cards
+
+    recipes.forEach(recipe => {
+        const recipeName = recipe.getAttribute('data-recipe-name').toLowerCase(); // Get the recipe name
+        // Toggle visibility based on search term
+        if (recipeName.includes(searchTerm)) {
+            recipe.style.display = 'block'; // Show card
+        } else {
+            recipe.style.display = 'none'; // Hide card
+        }
+    });
+});
+
+// Open the info popup
+function openPopup(recipeName) {
+    document.getElementById('popupOverlay').style.display = 'flex'; // Show overlay
+    document.getElementById('diaryContent').textContent = recipeName; // Update content
+}
+
+// Close the info popup
+function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none'; // Hide overlay
+}
+
+        // Show the filter popup
+        document.getElementById('open-filter').addEventListener('click', function() {
+            document.getElementById('filter-popup').style.display = 'flex';
+        });
+
+        // Hide the filter popup
+        document.getElementById('close-filter').addEventListener('click', function() {
+            document.getElementById('filter-popup').style.display = 'none';
+        });
+
+        // Collect filter data and log to console
+        document.getElementById('filter-form').addEventListener('change', function () {
+            const formData = new FormData(this);
+            const selectedFilters = {};
+
+            formData.forEach((value, key) => {
+                if (!selectedFilters[key]) {
+                    selectedFilters[key] = [];
+                }
+                selectedFilters[key].push(value);
+            });
+            console.log(selectedFilters); // Here you can filter recipes based on selected filters
+        });
+
+        // Open recipe details popup
+        function openPopup(recipeName) {
+            document.getElementById('diaryContent').innerText = 'Details about ' + recipeName;
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        // Close popup
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+
+
+
+        // Check for favorite recipes in localStorage and update the UI
+        document.addEventListener('DOMContentLoaded', function () {
+            const favoriteRecipes = JSON.parse(localStorage.getItem('favorites')) || [];
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            
+            recipeCards.forEach(card => {
+                const recipeId = card.getAttribute('data-recipe-id');
+                if (favoriteRecipes.includes(recipeId)) {
+                    // Add the 'favorite' class to heart icon if the recipe is already favorited
+                    const heartIcon = card.querySelector('.favorite-icon');
+                    heartIcon.classList.add('favorited');
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+
+<script src="js/script.js"></script>
+</html>
+

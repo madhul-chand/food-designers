@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f0e6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f58100;
+    color: white;
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Room Number */
+.room {
+    padding: 50px;
+    text-align: center;
+}
+
+.room .text h3 {
+    font-size: 24px;
+    margin-bottom: 30px; /* Adjust margin if needed */
+    color: #4F200D;
+}
+
+.container-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    max-width: 400px; /* Restrict max width for better UI */
+}
+
+button.submitbtn {
+    background-color: #FF7300;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Creates space between input and button */
+}
+
+button.submitbtn:hover {
+    background-color: #ff8c1a;
+}
+
+/* Recommended Recipes Section */
+.recommended {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.recommended h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #5a3e2f; /* Darker brown color */
+}
+
+.recipe-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Recipe Cards */
+.recipe-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: calc(25% - 20px); /* Responsive width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 160px; /* Fixed height to maintain uniformity */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.dish-type {
+    background-color: #ff6600;
+    color: white;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.recipe-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.recipe-card ul li {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Add Recipe Button (Styled as a Card) */
+.recipe-card.add-recipe {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px; /* Same height as other cards */
+    border: 2px dashed #ccc;
+    cursor: pointer;
+}
+
+.recipe-card.add-recipe:hover {
+    background-color: #eaeaea;
+    border-color: #bbb;
+}
+
+.recipe-card.add-recipe i {
+    font-size: 40px;
+    color: #ff6600;
+    display: inline-block;
+}
+
+/* Add Recipe Button */
+#addRecipeBtn {
+    background-color: #ff6600;
+    color: white;
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#addRecipeBtn:hover {
+    background-color: #e65500;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .recipe-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-card {
+        width: calc(100% - 20px);
+    }
+}

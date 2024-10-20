@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Profile</title>
+    <script src="https://unpkg.com/feather-icons@4.28.0"></script>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <h2>Your Recipes</h2>
+            <div id="recipeList"></div>
+            <div class="no-recipes" id="noRecipesMessage" style="display: none;">
+                No recipes added yet.
+            </div>
+            <!-- Add Clear Button -->
+            <button id="clearRecipes" class="clear-btn">Clear All Recipes</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const recipeList = document.getElementById("recipeList");
+            const noRecipesMessage = document.getElementById("noRecipesMessage");
+            const clearRecipesButton = document.getElementById("clearRecipes");
+
+            // Retrieve recipes from localStorage
+            const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+            if (storedRecipes.length === 0) {
+                noRecipesMessage.style.display = "block"; // Show no recipes message
+            } else {
+                noRecipesMessage.style.display = "none"; // Hide the message if recipes exist
+                storedRecipes.forEach(recipe => {
+                    const recipeCard = document.createElement("div");
+                    recipeCard.className = "recipe-card";
+
+                    const recipeTitle = document.createElement("div");
+                    recipeTitle.className = "recipe-title";
+                    recipeTitle.innerText = recipe.recipeName;
+                    recipeCard.appendChild(recipeTitle);
+
+                    // Display image if available
+                    if (recipe.image) {
+                        const img = document.createElement("img");
+                        img.src = recipe.image;
+                        recipeCard.appendChild(img);
+                    }
+
+                    const ingredientsHeader = document.createElement("div");
+                    ingredientsHeader.className = "ingredients";
+                    ingredientsHeader.innerText = "Ingredients:";
+                    recipeCard.appendChild(ingredientsHeader);
+
+                    recipe.ingredients.forEach(ingredient => {
+                        const ingredientItem = document.createElement("div");
+                        ingredientItem.className = "ingredient-item";
+                        ingredientItem.innerText = `${ingredient.qty} - ${ingredient.ingredientName}`;
+                        recipeCard.appendChild(ingredientItem);
+                    });
+
+                    const recipeInstructions = document.createElement("div");
+                    recipeInstructions.className = "recipe-instructions";
+                    recipeInstructions.innerText = `Instructions: ${recipe.instructions}`;
+                    recipeCard.appendChild(recipeInstructions);
+
+                    recipeList.appendChild(recipeCard);
+                });
+            }
+
+            // Handle Clear Recipes button click
+            clearRecipesButton.addEventListener("click", () => {
+                const confirmClear = confirm("Are you sure you want to clear all recipes?");
+                if (confirmClear) {
+                    localStorage.removeItem('recipes'); // Clear recipes from localStorage
+                    recipeList.innerHTML = ''; // Clear the displayed recipes
+                    noRecipesMessage.style.display = "block"; // Show "no recipes" message
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Butter Chicken</title>
+    <link rel="stylesheet" href="css/ingridients.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favourite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Ingredient Selection Section -->
+    <div class="container">
+        <h2>Japanese Curry</h2>
+        <p>Please select the ingredients you have with you</p>
+        <form id="ingredientForm" data-recipe="japanese_curry">
+            <label>
+                <input type="checkbox" name="ingredient" value="400g onion sliced" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>400g onion sliced
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="250g potato cut cubes" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 250g potato cut cubes
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="100g carrot sliced thick pieces" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>100g carrot sliced thick pieces
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tbsp oil" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>1 tbsp oil
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 box curry roux" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>1 box curry roux
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="800ml water" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 800ml water
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="4 cups cooked rice (hot)" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>4 cups cooked rice (hot)
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="4 Chicken Cutlets" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 4 Chicken Cutlets
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="4 tbsp fukujinzuke" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>4 tbsp fukujinzuke
+            </label>
+
+            <div class="button-container">
+                <button type="button" id="checkButton" onclick="checkIngredients()">Check Ingredients</button>
+                <button type="submit" id="doneButton">Done</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- The popup overlay -->
+    <div id="popupOverlay">
+        <div id="popup">
+            <p id="popupMessage"></p>
+            <div id="missingIngredientsList"></div>
+            <div class="popup-button-container">
+                <button id="pantryButton" onclick="goToPantry()">Go to Pantry</button>
+                <button id="recipeButton" onclick="goToRecipe()">Go to Recipe</button>
+                <span id="closePopup" onclick="closePopup()">Close</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    feather.replace();
+  </script>
+  <!--Js function-->
+  <script src="js/script.js"></script>
+  
+</html>

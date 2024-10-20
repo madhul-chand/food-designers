@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PantryShare - Butter Chicken</title>
+    <link rel="stylesheet" href="css/ingridients.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="navbar-logo">PantryShare</a>
+            <nav>
+                <a href="receipe.html">Recipe</a>
+                <a href="pantry.html">Ingredient</a>
+                <a href="add_reciepe.html">Add Recipe</a>
+                <a href="favorite.html">Favourite</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recipe Ingredient Selection Section -->
+    <div class="container">
+        <h2>Butter Chicken</h2>
+        <p>Please select the ingredients you have with you</p>
+        <form id="ingredientForm" data-recipe="butter_chicken">
+            <label>
+                <input type="checkbox" name="ingredient" value="750g chicken thigh fillets" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 750g Chicken thigh fillet
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 cup plain yoghurt" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1/2 cup plain yoghurt
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tbsp lemon juice" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 tbsp lemon juice
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tsp tumeric powder" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 tsp tumeric powder
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 tsp garam masala" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2 tsp garam masala
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1/2 tsp chilli powder or cayenne pepper powder" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1/2 tsp chilli powder or cayenne pepper powder
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tsp ground cumin" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 tsp ground cumin
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tbsp ginger" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>1 tbsp ginger
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 cloves garlic, crushed" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2 cloves garlic, crushed
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="2 tbsp butter" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 2 tbsp butter
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 cup tomato passata (aka tomato puree)" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 cup tomato passata (aka tomato puree)
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 cup heavy / thickened cream" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 cup heavy / thickened cream
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="1 tbsp sugar" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> 1 tbsp sugar
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="3/4 tsp salt" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>3/4 tsp salt
+            </label>
+            <label>
+                <input type="checkbox" name="ingredient" value="Basmanti rice" onchange="updateButtons()">
+                <span class="custom-checkbox"></span>Basmati rice
+            </label>
+
+            <label>
+                <input type="checkbox" name="ingredient" value="Coriander/cilantro (optional)" onchange="updateButtons()">
+                <span class="custom-checkbox"></span> Coriander/cilantro (optional)
+            </label>
+
+
+            <div class="button-container">
+                <button type="button" id="checkButton" onclick="checkIngredients()">Check Ingredients</button>
+                <button type="submit" id="doneButton">Done</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- The popup overlay -->
+    <div id="popupOverlay">
+        <div id="popup">
+            <p id="popupMessage"></p>
+            <div id="missingIngredientsList"></div>
+            <div class="popup-button-container">
+                <button id="pantryButton" onclick="goToPantry()">Go to Pantry</button>
+                <button id="recipeButton" onclick="goToRecipe()">Go to Recipe</button>
+                <span id="closePopup" onclick="closePopup()">Close</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    feather.replace();
+  </script>
+  <!--Js function-->
+  <script src="js/script.js"></script>
+  
+</html>
