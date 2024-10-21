@@ -5,7 +5,7 @@ PantryShare is a community focused solution designed to help international unive
 ## Description
 
 The project features a user-friendly website that allows students to explore, share and save recipes tailored to their cultural and dietary preferences. The platform encourages interaction through a like system to save the recipes for later, enabling users to find recipes suited to their dietary preferences, and connect with other through their cuisines. 
-The platform combines bith digital and physical elements to simulate a real world experience. Students can browse through recipes, check their available ingredients, and manage their pantry directly through the website. If they find that they’re missing an ingredient, they can check the shared pantry for available items. To access the pantry, users simulate an NFC-like tap using a Playground Circuit Express with a color detection system. When a student scans a colored card, the system mimics unlocking the pantry, allowing them to store or pick up ingredients. This process integrates technology with practical needs, providing an efficient way for students to collaborate, share, and maintain their shared kitchen environment while learning from each other’s culinary experiences.
+The platform combines both digital and physical elements to simulate a real world experience. Students can browse through recipes, check their available ingredients, and manage their pantry directly through the website. If they find that they’re missing an ingredient, they can check the shared pantry for available items. To access the pantry, users simulate an NFC-like tap using a Playground Circuit Express with a color detection system. When a student scans a colored card, the system mimics unlocking the pantry, allowing them to store or pick up ingredients. This process integrates technology with practical needs, providing an efficient way for students to collaborate, share, and maintain their shared kitchen environment while learning from each other’s culinary experiences.
 
 ## Getting Started
 
@@ -40,7 +40,7 @@ For the NFC room card tapping system
 
 The colour detection code was adapted from https://github.com/make2explore/Circuit-Playground-Express/blob/main/Codes/Arduino/ColorSensor/ColorSensor.ino
 
-In this report, We used chatGPT and Grammarly to improve and polish the report writing.
+In this report, We used ChatGPT and Grammarly to improve and polish the report writing.
 We critically reviewed and edited all AI-generated content to ensure it reflects our own
 understanding and perspective.
 We have applied the GenAI and MT Usage Framework to ensure my use of these tools
